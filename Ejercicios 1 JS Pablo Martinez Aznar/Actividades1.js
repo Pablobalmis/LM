@@ -2,6 +2,7 @@
 // Ejercicio 1
 function ejercicio1(cadena, booleano, array, funcion)
 {
+    //en vez de typeof array != "object" prueba isArray()
     if(typeof cadena != "string" || typeof booleano != "boolean" || typeof array != "object" || typeof funcion != "function")
     {
         console.log("El tipo de dato no es correcto");
@@ -48,6 +49,11 @@ function VerAsignaturas(...alumnos)
     for(let i = 0; i < alumnos.length; i++)
     {
         let alumno = alumnos[i];
+        //El ejercicio te "obliga" a desestructurar el array entonces puedes hacer lo siguiente
+        //       let [nombre,curso,...asignaturas] = i
+        //        console.log(nombre + "-" + curso + " asignaturas: " + asignaturas.join("/"));
+
+
         console.log(alumno[0] + "-" + alumno[1] + " asignaturas: " + alumno.join("/"));
     }
 }
