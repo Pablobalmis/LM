@@ -2,7 +2,7 @@
 // Ejercicio 1
 function ejercicio1(cadena, booleano, array, funcion)
 {
-    if(typeof cadena != "string" || typeof booleano != "boolean" || typeof array != "object" || typeof funcion != "function")
+    if(typeof cadena != "string" || typeof booleano != "boolean" || Array.isArray(array) == false || typeof funcion != "function")
     {
         console.log("El tipo de dato no es correcto");
         return;
@@ -47,8 +47,8 @@ function VerAsignaturas(...alumnos)
     }
     for(let i = 0; i < alumnos.length; i++)
     {
-        let alumno = alumnos[i];
-        console.log(alumno[0] + "-" + alumno[1] + " asignaturas: " + alumno.join("/"));
+        let [nombre, curso, ...asignaturas] = alumnos[i];
+        console.log(nombre + "-" + curso + " asignaturas: " + asignaturas.join("/"));
     }
 }
 VerAsignaturas(["Pablo", "1DAMAB", "LM", "programacion", "ED"], 
